@@ -1,16 +1,21 @@
 # Resources
 
-## Questions/Problems
+### Questions/Problems
 
 * [Cracking the Coding Interview](http://www.amazon.com/Cracking-Coding-Interview-6th-Programming/)		
 * [Google Red/Blue Hat Problem](http://puzzles.nigelcoldwell.co.uk/thirtynine.htm)
   * [Or video here](https://www.youtube.com/watch?v=N5vJSNXPEwA)		
-* [Maxim Abramchuck's vast list of lists of questions for various languages or types of job](https://github.com/MaximAbramchuck/awesome-interviews) 
+* [Maxim Abramchuck's vast list of lists of questions for various languages or types of job](https://github.com/MaximAbramchuck/awesome-interviews)
 
 ### Objects		
 
 * [Object Playground](http://www.objectplayground.com/)		
 * TODO: update link of object cheatsheet		
+
+
+### Data Structures
+
+* [Directed Graphs](http://algs4.cs.princeton.edu/42digraph/)
 
 
 ### Server-side Rendering		
