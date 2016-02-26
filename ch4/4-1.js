@@ -125,3 +125,40 @@ function findPath(source, dest, graph, edge) {
   // if no paths on edges return false
   return false;
 }
+
+
+// DELPHINE
+
+function doesRouteExist(graph, startNode, endNode) {
+//initialize a 'visited' object that's empty, and flag 'exists' starts at false
+  var visited = {}, exists = false;
+  //subroutine: takes current node as arg
+  var checkConnections = function(currentNode) {
+    //base case: if current node has no connections or connections all visited
+    if (!currentNode.edges.length) {
+    //return;
+      return;
+    }
+    //mark current node as visited
+    visited[currentNode.val] = true;
+    //loop through current node's connections
+    for (var i = 0; i < currentNode.edges.length; i++) {
+      //if connection's value is same as endNode value
+      if (currentNode.edges[i].val === endNode.val) {
+        // set exists to true
+        exists = true;
+        // return
+        return;
+      }
+      //if connection was not visited
+      if (!visited[currentNode.edges[i].val]) {
+        //call subroutine on connection
+        checkConnections(currentNode.edges[i]);
+      }
+    }
+  };
+  //call subroutine with args
+  checkConnections(startNode);
+  //return exists flag
+  return exists;
+}
