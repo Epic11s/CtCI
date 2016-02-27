@@ -17,16 +17,6 @@
 
 * [Directed Graphs](http://algs4.cs.princeton.edu/42digraph/)
 
-### Frameworks
-#####Angular
-
-* [$apply and $digest](http://www.sitepoint.com/understanding-angulars-apply-digest/)
-
-#####React
-
-
-#####Ember
-
 
 ### Server-side Rendering		
 
