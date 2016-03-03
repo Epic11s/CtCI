@@ -28,7 +28,7 @@ Stack.prototype.push = function(value) {
 };
 
 Stack.prototype.pop = function(value) {
-  this.length--;
+  if (this.length >= 1) this.length--;
   return this._storage.pop();
 };
 
