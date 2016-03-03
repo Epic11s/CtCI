@@ -40,6 +40,8 @@ var partition = function(arr, left, right) {
   return left;
 };
 
+
+
 var quickSort = function(arr, left, right) {
   var index = partition(arr, left, right);
   if (left < (index - 1)) {
@@ -49,3 +51,4 @@ var quickSort = function(arr, left, right) {
     quickSort(arr, index, right);
   }
 };
+
