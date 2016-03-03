@@ -1,10 +1,5 @@
 //Question 3.5
 
-function sortStack(stack) {
-
-}
-
-
 
 
 

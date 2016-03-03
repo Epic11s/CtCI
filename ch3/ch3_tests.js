@@ -1,12 +1,9 @@
 var expect = chai.expect;
 var should = chai.should();
 
-var stack = new Stack();
-
-afterEach(function() {
-  while (stack.length > 0) {
-    stack.pop();
-  }
+var stack;
+beforeEach(function() {
+  stack = new Stack();
 });
 
 
@@ -44,7 +41,7 @@ describe('push', function() {
   it('should add an item to the stack', function() {
     stack.push(4);
     stack.push(5);
-    expect(stack.length).to.equal(2);
+    expect(stack.length.to.equal(2);
   });
 
 })
@@ -64,7 +61,7 @@ describe('pop', function() {
     stack.push(5);
     expect(stack.pop()).to.equal(5);
     stack.pop();
-    expect(stack.length).to.equal(0);
+    expect(stack.length.to.equal(0);
   });
 
 });
@@ -89,7 +86,7 @@ describe('peek', function() {
     stack.push(4);
     stack.push(5);
     expect(stack.peek()).to.equal(5);
-    expect(stack.length).to.equal(2);
+    expect(stack.length.to.equal(2);
   });
 });
 
