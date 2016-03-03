@@ -1,5 +1,18 @@
-//Question 3.5
+/*
+              Master Solution
+*/
 
+
+
+
+
+
+
+/*
+            Individuals
+*/
+
+//    Bryan
 
 var Stack = function() {
  this.storage = {};
@@ -63,41 +76,3 @@ const sortStack = (original) => {
   //return original stack
   return original;
 }
-
-
-
-
-
-/*******************
-
-STACK CONSTRUCTOR AND METHODS
-
-*******************
-
-
-
-var Stack = function() {
-  this._storage = [];
-  this.length = 0;
-};
-
-Stack.prototype.push = function(value) {
-  this._storage.push(value);
-  this.length++;
-};
-
-Stack.prototype.pop = function(value) {
-  if (this.length >= 1) this.length--;
-  return this._storage.pop();
-};
-
-Stack.prototype.peek = function() {
-  return this._storage[this._storage.length - 1];
-};
-
-Stack.prototype.isEmpty = function(value) {
-  return this._storage.length === 0;
-};
-
-
-*******************/
