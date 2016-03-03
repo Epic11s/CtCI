@@ -1,4 +1,4 @@
-/* //Delphine's solution
+/* //Delphine's solution: 10.11 Peaks and Valleys
 
 function peaksAndValleys(arr){
 
