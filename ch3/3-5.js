@@ -80,6 +80,7 @@ const sortStack = (original) => {
 
 // Delphine
 
+/*//Suboptimal code
 function sortStack(stackA) {
   var stackB = new Stack();
   var length = 0;
@@ -140,4 +141,20 @@ function sortStack(stackA) {
   }
   singleSort(0);
   return stackA;
+}*/
+
+function sortStack(original) {
+  var temp = new Stack();
+  while (!original.isEmpty()) {
+    var smallest = original.pop();
+    while(!temp.isEmpty() && temp.peek() > smallest) {
+      original.push(temp.pop());
+    }
+    temp.push(smallest);
+  }
+  while (!temp.isEmpty()) {
+    original.push(temp.pop());
+  }
+  return original;
+
 }
