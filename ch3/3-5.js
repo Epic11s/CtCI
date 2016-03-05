@@ -76,3 +76,68 @@ const sortStack = (original) => {
   //return original stack
   return original;
 }
+
+
+// Delphine
+
+function sortStack(stackA) {
+  var stackB = new Stack();
+  var length = 0;
+  var biggest;
+  var counter = 1;
+
+  //figure out length of stack
+  while (!stackA.isEmpty()) {
+    stackB.push(stackA.pop());
+    length++;
+  }
+  while (!stackB.isEmpty()) {
+    stackA.push(stackB.pop());
+  }
+
+  function singleSort() {
+    var temp;
+    //if we've gone through all items in the stack, return
+    if (length === 0) return;
+
+    for (var i = 0; i < counter; i++) {
+      stackB.push(stackA.pop());
+      counter--;
+    }
+
+    //set temp to 'n-th' item
+    temp = stackA.pop();
+
+    while(!stackA.isEmpty()) {
+      //if next is smaller than temp
+      if(stackA.peek() < temp) {
+        //push next to B
+        stackB.push(stackA.pop());
+      } else {
+        if (stackB.isEmpty() && stackA.peek() > temp) {
+          counter++;
+        }
+        stackB.push(temp);
+        temp = null;
+        while(!stackA.isEmpty()) {
+          stackB.push(stackA.pop());
+        }
+      }
+    }
+    //if stackA is empty and temp has not been pushed to B
+    if(temp !== null) {
+      //push temp to B
+      stackB.push(temp);
+    }
+    //put all items back in stackA
+    while(!stackB.isEmpty()) {
+      stackA.push(stackB.pop());
+    }
+    //decrement length
+    length--;
+    //call singleSort
+    singleSort();
+  }
+  singleSort(0);
+  return stackA;
+}

@@ -26,6 +26,19 @@ describe('sortStack', function() {
     expect(stack.peek()).to.equal(5);
   });
 
+  it('should sort the stack so that the smallest items are on top', function() {
+    var stack = new Stack();
+    stack.push(5);
+    stack.push(6);
+    stack.push(3);
+    stack.push(9);
+    sortStack(stack);
+    expect(stack.pop()).to.equal(3);
+    expect(stack.pop()).to.equal(5);
+    expect(stack.pop()).to.equal(6);
+    expect(stack.peek()).to.equal(9);
+  });
+
 });
 
 describe('push', function() {
@@ -41,7 +54,7 @@ describe('push', function() {
   it('should add an item to the stack', function() {
     stack.push(4);
     stack.push(5);
-    expect(stack.length.to.equal(2);
+    expect(stack.length).to.equal(2);
   });
 
 })
@@ -61,7 +74,7 @@ describe('pop', function() {
     stack.push(5);
     expect(stack.pop()).to.equal(5);
     stack.pop();
-    expect(stack.length.to.equal(0);
+    expect(stack.length).to.equal(0);
   });
 
 });
@@ -86,7 +99,7 @@ describe('peek', function() {
     stack.push(4);
     stack.push(5);
     expect(stack.peek()).to.equal(5);
-    expect(stack.length.to.equal(2);
+    expect(stack.length).to.equal(2);
   });
 });
 
