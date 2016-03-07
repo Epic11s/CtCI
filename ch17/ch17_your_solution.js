@@ -1,5 +1,4 @@
 
-function findMajority(array) {
-
-  //return the majority number or -1
+function findMajority(arr, flag) {
+  //return the number that is the majority or -1 if no majority
 }
