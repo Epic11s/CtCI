@@ -16,7 +16,6 @@ describe('findMajority', function() {
     var arr = [1,2,3,4,5,6,7];
     Object.freeze(arr);
 
-    expect(findMajority(arr)).to.not.throw(Error);
     expect(findMajority(arr)).to.be.a('number');
   });
 
@@ -25,9 +24,9 @@ describe('findMajority', function() {
     var array2 = [1,2,1,2,1,1,3,2,1]; //1
     var array3 = [2,3,2,1,1,1,1,1]; //1
     var array4 = [1,1,2,2,3,2,1,1,1,1,1]; //1
-    var array5 = [1,2,3,2,1,2,1,2,1,1]; //1
+    var array5 = [1,2,3,2,1,2,1,2,1,1,1]; //1
     var arrays = [array1, array2, array3, array4, array5];
-    var results = arrays.reduce(results, arr) {
+    var results = arrays.reduce(function(results, arr) {
       return results.concat(findMajority(arr));
     }, []);
     expect(results.filter(function(num) { return num === 1; }).length).to.equal(5);
@@ -40,7 +39,7 @@ describe('findMajority', function() {
     var array4 = [1,2,2,3,2,1,1,1]; //-1
     var array5 = [2,3,2,1,2,1,2,1,1]; //-1
     var arrays = [array1, array2, array3, array4, array5];
-    var results = arrays.reduce(results, arr) {
+    var results = arrays.reduce(function(results, arr) {
       return results.concat(findMajority(arr));
     }, []);
     expect(results.filter(function(num) { return num === -1; }).length).to.equal(5);
