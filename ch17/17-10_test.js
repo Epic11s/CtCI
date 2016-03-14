@@ -44,4 +44,11 @@ describe('findMajority', function() {
     }, []);
     expect(results.filter(function(num) { return num === -1; }).length).to.equal(5);
   });
+
+  it('should have O(1) space complexity', function() {
+    var funcString = findMajority.toString();
+    var arrMatches = funcString.match(/= \[/g);
+    var objMatches = funcString.match(/= {/g);
+    console.log(arrMatches, objMatches);
+  })
 });
