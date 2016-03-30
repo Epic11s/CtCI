@@ -1,3 +1,12 @@
+
+
+
+/*                  Individual Solutions                    */
+
+
+
+//                  Bryan
+
 function sortAnagrams(arr) {
   var signatures = {}, words = {};
   arr.forEach(function(word) {
