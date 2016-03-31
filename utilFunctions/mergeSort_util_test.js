@@ -1,10 +1,10 @@
-var expect = chai.expect;
+const expect = chai.expect;
 
 describe('mergeSort', function() {
   function randomArray() {
-    var len = Math.random()*100 + 1;
-    var arr = [];
-    for(var i = 0; i < len; i++) {
+    const len = Math.random()*100 + 1;
+    const arr = [];
+    for(let i = 0; i < len; i++) {
       arr.push(Math.floor(Math.random()*100));
     }
     return arr;
@@ -20,7 +20,7 @@ describe('mergeSort', function() {
   }
 
   function compareHashes(hash1, hash2) {
-    var keys1 = Object.keys(hash1);
+    const keys1 = Object.keys(hash1);
     if(keys1.length !== Object.keys(hash2).length) return false;
     return keys1.reduce(function(isSame, key) {
       if(hash2[key] !== hash1[key]) return false;
@@ -40,10 +40,10 @@ describe('mergeSort', function() {
   });
 
   it('should take an array and return an array of the same length', function() {
-    var arr1 = randomArray();
-    var arr2 = randomArray();
-    var arr3 = randomArray();
-    var arr4 = randomArray();
+    const arr1 = randomArray();
+    const arr2 = randomArray();
+    const arr3 = randomArray();
+    const arr4 = randomArray();
 
     expect(mergeSort(arr1).length).to.equal(arr1.length);
     expect(mergeSort(arr2).length).to.equal(arr2.length);
@@ -52,16 +52,16 @@ describe('mergeSort', function() {
   });
 
   it('should take an array and return an array with the same values', function() {
-    var arr1 = randomArray();
-    var arr2 = randomArray();
-    var arr3 = randomArray();
-    var arr4 = randomArray();
+    const arr1 = randomArray();
+    const arr2 = randomArray();
+    const arr3 = randomArray();
+    const arr4 = randomArray();
 
-    var hash1 = buildArrayHash(arr1);
-    var hash2 = buildArrayHash(arr2);
-    var hash3 = buildArrayHash(arr3);
-    var hash4 = buildArrayHash(arr4);
-    var sortedArr, sortedHash;
+    const hash1 = buildArrayHash(arr1);
+    const hash2 = buildArrayHash(arr2);
+    const hash3 = buildArrayHash(arr3);
+    const hash4 = buildArrayHash(arr4);
+    let sortedArr, sortedHash;
 
     sortedArr = mergeSort(arr1);
     sortedHash = buildArrayHash(sortedArr);
@@ -81,10 +81,10 @@ describe('mergeSort', function() {
   });
 
   it('should return an array in increasing sorted order', function() {
-    var arr1 = randomArray();
-    var arr2 = randomArray();
-    var arr3 = randomArray();
-    var arr4 = randomArray();
+    const arr1 = randomArray();
+    const arr2 = randomArray();
+    const arr3 = randomArray();
+    const arr4 = randomArray();
 
     expect(checkSort(mergeSort(arr1))).to.equal(true);
     expect(checkSort(mergeSort(arr2))).to.equal(true);
