@@ -52,7 +52,7 @@ function mergeSortStr(str) {
     else if(left[cLeft] < right[cRight]) {
       result += left[cLeft];
       cLeft++;
-    } else if(right[cRight] < left[cLeft]) {
+    } else {
       result += right[cRight];
       cRight++;
     }

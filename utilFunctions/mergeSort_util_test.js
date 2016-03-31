@@ -9,6 +9,7 @@ describe('mergeSort', function() {
     }
     return arr;
   }
+
   function buildArrayHash(arr) {
     return arr.reduce(function(hash, val) {
       if(hash[val] === undefined) hash[val] = 1;
@@ -17,17 +18,19 @@ describe('mergeSort', function() {
       return hash;
     }, {})
   }
+
   function compareHashes(hash1, hash2) {
     var keys1 = Object.keys(hash1);
-    if(keys1 !== Object.keys(hash2).length) return false;
+    if(keys1.length !== Object.keys(hash2).length) return false;
     return keys1.reduce(function(isSame, key) {
       if(hash2[key] !== hash1[key]) return false;
       return isSame
     }, true);
   }
+
   function checkSort(arr) {
     return arr.reduce(function(isSorted, val, i, arr) {
-      if(i > 0 && arr[i] < arr[i-1]) return false;
+      if(arr[i-1] && arr[i-1] > arr[i])  return false;
       return isSorted;
     }, true)
   }
@@ -62,30 +65,30 @@ describe('mergeSort', function() {
 
     sortedArr = mergeSort(arr1);
     sortedHash = buildArrayHash(sortedArr);
-    expect(compareHashes(sortedArr, hash1)).to.equal(true);
+    expect(compareHashes(sortedHash, hash1)).to.equal(true);
 
     sortedArr = mergeSort(arr2);
     sortedHash = buildArrayHash(sortedArr);
-    expect(compareHashes(sortedArr, hash1)).to.equal(true);
+    expect(compareHashes(sortedHash, hash2)).to.equal(true);
 
     sortedArr = mergeSort(arr3);
     sortedHash = buildArrayHash(sortedArr);
-    expect(compareHashes(sortedArr, hash1)).to.equal(true);
+    expect(compareHashes(sortedHash, hash3)).to.equal(true);
 
     sortedArr = mergeSort(arr4);
     sortedHash = buildArrayHash(sortedArr);
-    expect(compareHashes(sortedArr, hash1)).to.equal(true);
-  }
+    expect(compareHashes(sortedHash, hash4)).to.equal(true);
+  });
 
-  it('should return a sorted array', function() {
+  it('should return an array in increasing sorted order', function() {
     var arr1 = randomArray();
     var arr2 = randomArray();
     var arr3 = randomArray();
     var arr4 = randomArray();
 
-    expect(checkSort(arr1)).to.equal(true);
-    expect(checkSort(arr2)).to.equal(true);
-    expect(checkSort(arr3)).to.equal(true);
-    expect(checkSort(arr4)).to.equal(true);
-  })
+    expect(checkSort(mergeSort(arr1))).to.equal(true);
+    expect(checkSort(mergeSort(arr2))).to.equal(true);
+    expect(checkSort(mergeSort(arr3))).to.equal(true);
+    expect(checkSort(mergeSort(arr4))).to.equal(true);
+  });
 });
