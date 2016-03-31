@@ -1,4 +1,5 @@
-
+# Personal EsLint config
+.eslintrc.json
 
 # Logs
 logs
