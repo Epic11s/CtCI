@@ -11,16 +11,14 @@ describe('sortedMatrixSearch', function() {
     expect(Array.isArray(sortedMatrixSearch([[1,2,3],[4,5,6]], 0))).to.equal(true);
   });
 
-  it('should return an array with one value === false if target not found', function() {
+  it('should return an array with no values if target not found', function() {
     var result;
 
     result = sortedMatrixSearch([[],[]], 0);
-    expect(result.length).to.equal(1);
-    expect(result[0]).to.equal(false);
+    expect(result.length).to.equal(0);
 
     result = sortedMatrixSearch([[1,2,3],[4,5,6], 0]);
-    expect(result.length).to.equal(1);
-    expect(result[0]).to.equal(false);
+    expect(result.length).to.equal(0);
   });
 
   it('should return an array with the coordinates, [row, col], of the target', function() {
