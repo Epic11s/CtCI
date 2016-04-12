@@ -1,6 +1,6 @@
 var expect = chai.expect;
 
-descirbe("count2s", function() {
+describe("count2s", function() {
   it("should be a function", function() {
     expect(count2s).to.be.a('function');
   });
@@ -16,10 +16,10 @@ descirbe("count2s", function() {
 
   it("should return the number of 2's that occur before the input", function() {
     expect(count2s(2)).to.equal(1);
-    expect(count2s(25)).to.equal(8);
-    expect(count2s(35)).to.equal(9);
-    expect(count2s(75)).to.equal(13);
-    expect(count2s(82)).to.equal(14);
-    expect(count2s(122)).to.equal(20);
+    expect(count2s(25)).to.equal(9);
+    expect(count2s(35)).to.equal(14);
+    expect(count2s(75)).to.equal(18);
+    expect(count2s(82)).to.equal(19);
+    expect(count2s(122)).to.equal(26);
   })
 })
