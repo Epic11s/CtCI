@@ -62,3 +62,7 @@ function kthMultiple(k) {
 
   return multiSieve[k-1];
 }
+
+function count2s(n) {
+
+}
