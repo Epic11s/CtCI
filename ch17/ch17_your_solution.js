@@ -1,3 +1,7 @@
+function babyNames(frequencies, pairs) {
+  
+}
+
 
 function balancedSubArray(arr, targetType, limitType, extras, largestSolution) {
     if(targetType === undefined) {
