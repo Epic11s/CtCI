@@ -1,4 +1,6 @@
-function wordDistance(file) {}
+const fs = require('fs');
+
+function wordDistance(file, word1, word2) {}
 
 function circusTower(performers) {}
 
