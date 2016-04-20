@@ -24,15 +24,19 @@ describe("smallestK", function() {
 
   it("should return the three smallest numbers from the original array in the result", function() {
     function checkSmallest(array) {
-      const args = Array.prototype.reduce.apply(null, function(obj, num) {
+      const args = Array.prototype.reduce.call(arguments, function(obj, num) {
         obj[num] = true;
+        return obj;
       }, {});
-      return array.reduce(function(val){
-        return args[val];
-      })
-      .reduce(function(containsAll, val) {
-        return containsAll ? val : containsAll;
-      }, true)
+
+      return (
+        array.map(function(val){
+          return args[val];
+        })
+        .reduce(function(containsAll, val) {
+          return containsAll ? val : containsAll;
+        }, true);
+      )
     }
     var result;
 
