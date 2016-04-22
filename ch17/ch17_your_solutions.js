@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+function scheduleMasseuse(requests) {}
+
 function smallestK(array, targetNum) {}
 
 function wordDistance(file, word1, word2) {}
@@ -15,6 +17,7 @@ function kthMultiple(k) {}
 function count2s(n) {}
 
 module.exports = {
+  scheduleMasseuse: scheduleMasseuse,
   smallestK: smallestK,
   wordDistance: wordDistance,
   circusTower: circusTower,
