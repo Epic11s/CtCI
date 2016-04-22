@@ -21,21 +21,28 @@ describe("scheduleMasseuse", function() {
   });
 
   it("should return an array of times that maximizes the total time booked without adjacent requests", function() {
-    expect(scheduleMasseuse(requests1)).to.equal(0);
-    expect(scheduleMasseuse(requests2)).to.equal(180);
-    expect(scheduleMasseuse(requests3)).to.equal(180);
-    expect(scheduleMasseuse(requests4)).to.equal(180);
-  })
+    const sum = (array) => array.reduce((sum, val) => sum+val, 0);
+    var result;
+
+    result = scheduleMasseuse(requests1);
+    expect(sum(result)).to.equal(0);
+    result = scheduleMasseuse(requests2);
+    expect(sum(result)).to.equal(180);
+    result = scheduleMasseuse(requests3);
+    expect(sum(result)).to.equal(180);
+    result = scheduleMasseuse(requests4);
+    expect(sum(result)).to.equal(180);
+  });
 
   it("should return the correct number of appointments", function() {
     expect(scheduleMasseuse(requests1).length).to.equal(0);
     expect(scheduleMasseuse(requests2).length).to.equal(3);
     expect(scheduleMasseuse(requests3).length).to.equal(3);
     expect(scheduleMasseuse(requests4).length).to.equal(4);
-  })
+  });
 
   it("should return the array of appointments in order", function() {
-    function scheduleCompare(solution, answer) {
+    const scheduleCompare = (solution, answer) => {
       for(var i = 0; i < solution.length; i++) {
         if(solution[i] !== answer[i]) return false;
       }
@@ -51,5 +58,5 @@ describe("scheduleMasseuse", function() {
     expect(scheduleCompare(solution, answer3)).to.equal(true);
     solution = scheduleMasseuse(requests4);
     expect(scheduleCompare(solution, answer4)).to.equal(true);
-  })
+  });
 });
